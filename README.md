@@ -27,12 +27,39 @@ Built for the **DEV Open-Source AI Challenge (Week 2: Side Hustle)**.
 ---
 
 ## 🚀 Quickstart (Run Locally in 60 Seconds)
+## 🚀 Quickstart
 
-### 1. Prerequisites
-Make sure you have [Python 3.9+](https://www.python.org/) and [Ollama](https://ollama.com/) installed on your system.
+**You need:** [Python 3](https://www.python.org/) (I used [your version, run `python --version`]) and [Ollama](https://ollama.com/) installed.
 
-Pull the open-weight model via Ollama:
+**1. Get the code**
+```bash
+git clone https://github.com/akshat-bit420/VaultLedger.git
+cd VaultLedger
+```
+
+**2. Pull the model** (this is the only step that needs internet, about 4.7 GB)
 ```bash
 ollama pull qwen2.5:7b
 ```
-*Before step 4, make sure Ollama is running (check for the llama icon in the system tray, or run `ollama list`).*
+
+**3. Make sure Ollama is running**
+Check for the llama icon in the system tray, or run `ollama list`. If the app later says "Failed to connect to Ollama", the server isn't running, so start it and try again.
+
+**4. Install the Python packages**
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows (on Mac/Linux: source .venv/bin/activate)
+pip install -r requirements.txt
+```
+
+**5. Generate the sample data**
+```bash
+python sample_data_generator.py
+```
+This creates a `sample_data` folder with 3 fake invoices (one is a deliberate duplicate) and a bank statement CSV with one charge that has no receipt.
+
+**6. Run the app**
+```bash
+streamlit run app.py
+```
+Upload the 3 PDFs and the CSV from `sample_data`, then click **Run Local AI Audit**. The first run is slow while the model loads. Expected result: 3 invoices, 2 flagged as duplicates, 1 bank charge missing a receipt.
