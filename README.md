@@ -26,7 +26,6 @@ Built for the **DEV Open-Source AI Challenge (Week 2: Side Hustle)**.
 
 ---
 
-## 🚀 Quickstart (Run Locally in 60 Seconds)
 ## 🚀 Quickstart
 
 **You need:** [Python 3](https://www.python.org/) (I used [your version, run `python --version`]) and [Ollama](https://ollama.com/) installed.
