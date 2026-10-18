@@ -34,3 +34,5 @@ Make sure you have [Python 3.9+](https://www.python.org/) and [Ollama](https://o
 Pull the open-weight model via Ollama:
 ```bash
 ollama pull qwen2.5:7b
+```
+*Before step 4, make sure Ollama is running (check for the llama icon in the system tray, or run `ollama list`).*
